@@ -15,10 +15,10 @@ function App() {
         <div>
             <Header/>
             <Routes>
-                <Route index elements={<Auth/>}/>
-                <Route path='/home' elements={<Home/>}/>
-                <Route path='/addVehicle' elements={<AddVehicle/>}/>
-                <Route path='/details/:vehicleId' elements={<VehicleDetails/>}/>
+                <Route index element={<Auth/>}/>
+                <Route path='/home' element={<Home/>}/>
+                <Route path='/addVehicle' element={<AddVehicle/>}/>
+                <Route path='/details/:vehicleId' element={<VehicleDetails/>}/>
             </Routes>
 
         </div>
