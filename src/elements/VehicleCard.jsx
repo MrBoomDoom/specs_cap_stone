@@ -1,8 +1,10 @@
 import React from 'react'
 
-const VehicleCard = () => {
+const VehicleCard = ({vehicle}) => {
     return (
-        <div>VehicleCard</div>
+        <div>
+            <h2>{vehicle.name}</h2>
+        </div>
     )
 }
 

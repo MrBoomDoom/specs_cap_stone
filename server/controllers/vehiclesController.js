@@ -4,27 +4,43 @@ const { Vehicle } = require("../models/vehicle")
 module.exports = {
     addNewVehicle: async (req, res) => {
         try {
-            const { imageURL, type, speed, brand, engine, priority, userId} =
+            const { imageURL, name, type, speed, brand, engine, userId} =
                 req.body
 
             const newVehicle = await Vehicle.create({
                 imageURL,
+                name,
                 type,
                 speed,
                 brand,
                 engine,
-                priority,
                 userId
-            })
-
-            topics.forEach(async id => {
-                await BookTopic.create({ vehicleId: newVehicle.id, topicId: id })
             })
 
             res.sendStatus(200)
         } catch (theseHands) {
             console.log(theseHands)
-            res.status(500).send("Vehicle failed to add")
+            res.status(500).send("Failed to add Vehicle")
+        }
+    },
+
+    getUserVehicles: async (req, res) => {
+        try {
+            const {userId} = req.params
+
+        const vehicles = await Vehicle.findAll({
+                include: [
+                    {
+                        model: User,
+                        attributes: ["username", "id"],
+                        where: { id: userId }
+                    },
+                ]
+            })
+        res.status(200).send(vehicles)
+        } catch(err){
+            console.log(err)
+            res.sendStatus(500)
         }
     }
 }

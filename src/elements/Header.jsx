@@ -14,8 +14,7 @@ const Header = () => {
 
   return (
     userId ? (
-        <nav className='flex justify-between'>
-            <NavLink to='/'>Auth</NavLink>
+        <nav className='flex justify-center items-center h-[10vh] bg-[#1fb6ff]'>
             <NavLink to='/home'>Home</NavLink>
             <NavLink to='/addVehicle'>Add a Vehicle</NavLink>
             <button onClick={logout}>Logout</button>

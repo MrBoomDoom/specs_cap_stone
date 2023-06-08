@@ -4,7 +4,7 @@ import Home from './pages/Home'
 import Auth from './pages/Auth'
 import VehicleDetails from './pages/VehicleDetails'
 import AddVehicle from './pages/AddVehicle'
-import {Routes, Route} from 'react-router-dom'
+import {Routes, Route, Navigate} from 'react-router-dom'
 import { useContext } from 'react'
 import AuthContext from './store/authContext'
 
@@ -15,12 +15,11 @@ function App() {
         <div>
             <Header/>
             <Routes>
-                <Route index element={<Auth/>}/>
-                <Route path='/home' element={<Home/>}/>
-                <Route path='/addVehicle' element={<AddVehicle/>}/>
-                <Route path='/details/:vehicleId' element={<VehicleDetails/>}/>
+                <Route index element={userId ? <Navigate to='/home'/> : <Auth/>}/>
+                <Route path='/home' element={userId ? <Home/> : <Navigate to='/'/>}/>
+                <Route path='/addVehicle' element={userId ? <AddVehicle/> : <Navigate to='/'/>}/>
+                <Route path='/details/:vehicleId' element={userId ? <VehicleDetails/> : <Navigate to='/'/>}/>
             </Routes>
-
         </div>
     )
 }

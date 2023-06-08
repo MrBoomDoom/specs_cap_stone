@@ -10,6 +10,7 @@ module.exports = {
             primaryKey: true
         },
         imageURL: DataTypes.STRING,
+        name: DataTypes.STRING,
         type: DataTypes.STRING,
         speed: DataTypes.INTEGER,
         brand: DataTypes.STRING,

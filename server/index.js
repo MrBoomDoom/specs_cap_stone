@@ -18,7 +18,8 @@ VehicleFav.belongsTo(Vehicle)
 User.hasMany(VehicleFav)
 VehicleFav.hasMany(User)
 
-const {register, login, checkUser} = require('./controllers/authController')
+const {register, login, checkUser, logout} = require('./controllers/authController')
+const {addNewVehicle, getUserVehicles} = require('./controllers/vehiclesController')
 
 const app = express()
 
@@ -36,7 +37,11 @@ app.use(session({
 app.post('/api/register', register)
 app.post('/api/login', login)
 app.get('/api/user', checkUser)
+app.post('/api/logout', logout)
 
-sequelize.sync({force:true})
+app.post('/api/vehicles', addNewVehicle)
+app.get('/api/vehicles/:userId', getUserVehicles)
+
+sequelize.sync()
     .then(() => app.listen(SERVER_PORT, console.log(`Never gonna give you up ${SERVER_PORT}`)))
     .catch(err => console.log(err))
