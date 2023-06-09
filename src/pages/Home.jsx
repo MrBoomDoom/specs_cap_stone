@@ -9,7 +9,7 @@ const Home = () => {
     const {userId} = useContext(AuthContext)
 
     const getUserVehicles = () => {
-        axios.get(`/api/vehicles${userId}`)
+        axios.get(`/api/vehicles/${userId}`)
             .then(res => {
                 console.log(res.data)
                 setVehicles(res.data)
@@ -23,7 +23,8 @@ const Home = () => {
 
     return (
         <div>
-            {vehicles.map(vehicle => <VehicleCard vehicle={vehicle}/>)}
+            {vehicles.map(vehicle => <VehicleCard key={vehicle.id} vehicle={vehicle} getUserVehicles={getUserVehicles}/>)}
+
         </div>
     )
 }

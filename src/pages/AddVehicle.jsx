@@ -23,21 +23,27 @@ const AddVehicle = () => {
           userId
         }
 
-        axios.post('./api/vehicles', body)
-            .then(res => console.log(res.data))
-            .catch(err => console.log(err))
+        axios.post('/api/vehicles', body)
+        .then(res => console.log(res.data))
+        .catch(err => console.log(err))
     }
 
     return (
         <div>
             <form onSubmit={handleSubmitForm}>
-                <input placeholder='Image' onChange={e => setImage(e.target.value)} />
-                <input placeholder='Name' onChange={e => setName(e.target.value)} />
-                <input placeholder='Type of vehicle' onChange={e => setType(e.target.value)} />
-                <input placeholder='Speed' onChange={e => setSpeed(e.target.value)} />
-                <input placeholder='Brand' onChange={e => setBrand(e.target.value)} />
-                <input placeholder='Engine' onChange={e => setEngine(e.target.value)} />
-                <button>Submit</button>
+                <div className='flex flex-col justify-center items-center'>
+                 <div className='h-[350px] w-[65vw] border-solid border border-color-primary rounded-2xl flex flex-col justify-center items-center'>
+                    <div className='flex justify-center items-center h-[200px]'>
+                        <input placeholder='Image' onChange={e => setImage(e.target.value)} />
+                        <input placeholder='Name' onChange={e => setName(e.target.value)} />
+                        <input placeholder='Type of vehicle' onChange={e => setType(e.target.value)} />
+                        <input placeholder='Speed' onChange={e => setSpeed(e.target.value)} />
+                        <input placeholder='Brand' onChange={e => setBrand(e.target.value)} />
+                        <input placeholder='Engine' onChange={e => setEngine(e.target.value)} />
+                    <button>Submit</button>
+                    </div>
+                 </div>
+                 </div>
             </form>
         </div>
     )

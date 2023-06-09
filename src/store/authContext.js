@@ -30,10 +30,7 @@ export const AuthContextProvider = props => {
         axios
             .get("/api/user")
             .then(res => setUserId(res.data.userId))
-            .catch(err => {
-                setUserId(null)
-                console.log(err)
-        })
+            .catch(err => console.log(err))
     }, [])
 
     return (

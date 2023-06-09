@@ -60,7 +60,7 @@ module.exports = {
         }
     },
     checkUser: (req, res) => {
-        console.log(req.session)
+        console.log(req.session.user)
         if(req.session.user){
             res.status(200).send(req.session.user)
         } else {

@@ -12,9 +12,8 @@ module.exports = {
         imageURL: DataTypes.STRING,
         name: DataTypes.STRING,
         type: DataTypes.STRING,
-        speed: DataTypes.INTEGER,
+        speed: DataTypes.STRING,
         brand: DataTypes.STRING,
         engine: DataTypes.STRING,
-        priority: DataTypes.INTEGER
     })
 }

@@ -1,5 +1,5 @@
 const { Vehicle } = require("../models/vehicle")
-// const { BookTopic } = require("../models/bookTopic")
+const {User} = require("../models/user")
 
 module.exports = {
     addNewVehicle: async (req, res) => {
@@ -23,6 +23,23 @@ module.exports = {
             res.status(500).send("Failed to add Vehicle")
         }
     },
+
+    deleteVehicle: async (req, res) => {
+        try {
+            const {id} = req.params
+            await Vehicle.destroy({where: {id: +id}})
+            res.sendStatus(200)
+        } catch (error) {
+            console.log('ERROR IN getCurrentUserPosts')
+            console.log(error)
+            res.sendStatus(400)
+        }
+    },
+
+
+    //TO DO
+    //CREATE ADD FAV FUNCTION
+    //VEHICLE FAV.CREATE(REQ.BODY)
 
     getUserVehicles: async (req, res) => {
         try {
