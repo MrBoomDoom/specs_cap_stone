@@ -22,9 +22,10 @@ const Home = () => {
     }, [])
 
     return (
-        <div>
-            {vehicles.map(vehicle => <VehicleCard key={vehicle.id} vehicle={vehicle} getUserVehicles={getUserVehicles}/>)}
-
+        <div className='background'>
+            <div className='car-collection'>
+                {vehicles.map(vehicle => <VehicleCard key={vehicle.id} vehicle={vehicle} getUserVehicles={getUserVehicles}/>)}
+            </div>
         </div>
     )
 }

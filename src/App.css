@@ -24,9 +24,103 @@
   color: white;
 }
 
+.vehicle-card {
+  background-color: rgb(57, 57, 57);
+  width: 400px;
+  height: 475px;
+  margin-top: 90px;
+  margin-left: 40px;
+  margin-right: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 35px;
+}
+.vehicle-card-text {
+  margin: 15px;
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 35px;
+}
+.vehicle-card-info {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .App-link {
   color: #61dafb;
 }
+.card-button:hover {
+  background-color: rgb(30, 30, 30);
+}
+.card-button {
+  background-color: rgb(87, 87, 87);
+  width: 75px;
+  height: 25px;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.background {
+  display: flex;
+  justify-content: center;
+  background-attachment: fixed;
+  width: 100%;
+  min-height: 92%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-image: url("https://i.pinimg.com/originals/11/35/60/11356030e14d3c12a08ceded099c8f1f.jpg");
+}
+
+.header {
+  width: 100%;
+  height: 8vh;
+  background-color: rgb(15, 15, 15);
+  color: white;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.add-box {
+  margin-top: 15vh;
+  margin-bottom: 57vh;
+  width: 70vw;
+  height: 20vh;
+  background-color: rgb(57, 57, 57);
+  color: white;
+  display:flex;
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.car-collection {
+  display:flex;
+  justify-content: center;
+  width: 80%;
+  flex-wrap: wrap;
+}
+
+input {
+  background-color: rgb(57, 57, 57);
+
+}
+
+input:focus {
+  outline: none;
+}
+
+/* border-radius-[15px] border-width-[15px] h-[350px] w-[65vw] border-solid border border-color-primary rounded-2xl flex flex-col justify-center items-center */
 
 @keyframes App-logo-spin {
   from {

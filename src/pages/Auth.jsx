@@ -22,10 +22,11 @@ const Auth = () => {
             .catch(err => console.log(err))
     }
     return (
+        <div className="background">
         <main id="auth-container">
             {register ? (
                 <form onSubmit={e => handleSubmit(e)}>
-                    <input
+                    <input className="color: gray"
                         placeholder="username"
                         onChange={e => setUsername(e.target.value)}
                     />
@@ -52,6 +53,7 @@ const Auth = () => {
                 Need to {register ? "log in?" : "register?"}
             </button>
         </main>
+        </div>
     )
 }
 

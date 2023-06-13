@@ -10,8 +10,8 @@ const Header = () => {
 
   return (
     userId ? (
-        <nav className='flex justify-center items-center h-[10vh] bg-[#1fb6ff]'>
-            <NavLink to='/home' className='mx-11'>Home</NavLink>
+        <nav className='header'>
+            <NavLink to='/home' className='mx-11'>Vehicle Collection</NavLink>
             <NavLink to='/fav' className='mx-11'>Favorites</NavLink>
             <NavLink to='/addVehicle' className='mx-11'>Add a Vehicle</NavLink>
             <button onClick={logout}>Logout</button>
